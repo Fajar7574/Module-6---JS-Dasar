@@ -1,0 +1,427 @@
+///tugas 01-07
+<html>
+<head>
+  <title>Fajar Ridwan Sidik</title>
+</head>
+
+<body>
+  <h1>Kelompok 11</h1>
+  <p>Asean Youth Forum.</p>
+</body>
+<script> 
+const name = "skilvul"; /// String
+const age = 10; /// Number
+const isMarried = false; /// Boolean
+
+///TUGAS 01-data-type.js 
+
+/// Soal - 01
+/// Gunakan built-in function yang dimiliki tipe data String untuk mengubah variable name menjadi huruf besar
+const upperCase = name;
+console.log(upperCase.toUpperCase())
+/// Soal - 02
+/// Gunakan built-in function yang dimiliki oleh Javascript, agar kita mengetahui apa tipe data yang dimiliki oleh variable age
+const typeOfAge = age;
+console.log(typeof typeOfAge)
+
+
+/// Soal - 03
+/// Gunakan built-in function yang dimiliki tipe data Number untuk mengambil 2 nilai dibelakang koma dari PI
+const pi = 3.141592653589793238;
+const twoDigitsOfPi = pi.toFixed(2);
+console.log(twoDigitsOfPi)
+
+
+/// Soal - 04
+/// Gunakan built-in function yang dimiliki Javascript untuk mengetahui apakah nilai dibawah ini dapat dikategorikan sebagai Number atau tidak (NaN)
+const isNotNumber = "10000";
+console.log(isNaN(isNotNumber))///true
+
+/// Soal - 05
+/// Gunakan built-in function yang dimiliki oleh Javascript untuk mengubah sebuah String menjadi Number
+const stringToNumber = "1000";
+console.log(typeof stringToNumber)
+Hasil = Number(stringToNumber);
+console.log(typeof Hasil)
+
+///Tugas 2 Operator.js
+
+/// Soal - 01
+/// Dibawah ini akan ditampilkan daftar pengeluaran bulan ini beserta gaji yang akan diterima, tugas-mu adalah untuk menghitung gaji yang tersisa
+
+/// Pegeluaran
+gundam = 750000 ;
+makan = 2000000 ;
+kost = 1000000 ;
+subscription = 250000 ;
+
+/// Gaji
+gajiPokok = 5000000 ;
+gajiBonus = 0.1 ; 
+///dari gajiPokok
+gajiLembur = 0.05 ; ///dari gajiPokok
+
+/// Sisa Gaji
+const sisaGaji =  gajiPokok + gajiPokok*gajiBonus + gajiPokok*gajiLembur - gundam - makan - kost - subscription ;
+console.log(sisaGaji)
+
+
+/// Soal - 02
+/// Gunakan operator yang tepat untuk mengetahui apakah 2 variable dibawah ini memiliki nilai yang sama (tipe data tidak termasuk)
+const oneInString = "1";
+const oneInNumber = 1;
+const isSame= oneInNumber==oneInString;///true
+console.log(isSame)
+
+
+/// Soal - 03
+/// Gunakan operator yang tepat untuk mengetahui apakah studentA memiliki nilai yang lebih tinggi atau sama dengan studentB
+const studentA = 75;
+const studentB = 80;
+const isHigher = studentA > studentB;///false
+console.log(isHigher)
+
+
+/// Soal - 04
+/// Gunakan operator yang tepat untuk membedakan 2 buah variable yang terdapat pada soal-02 berdasarkan value-nya (tipe data juga dihitung)
+const final=oneInString===oneInNumber;///false
+console.log(final)
+
+///tugas 03-Condition
+
+/// Soal - 01
+/// Buatlah sebuah kondisi dimana akan melakukan pengecekan terhadap user yang hendak bepergian menggunakan motor, ada beberapa hal yang perlu dilakukan salah satu-nya adalah
+/// - kondisi dibuat menggunakn IF ELSE
+/// - kondisi pertama akan mengecek apakah user sudah berusia kurang dari 18 tahun
+/// - jika IYA, maka cetak tulisan "Anda belum cukup umur"
+/// - jika TIDAK
+///   buatlah kondisi lagi dimana akan melakukan cek terhadap user tersebut, apakah dia sudah memiliki SIM atau belum
+///   - jika IYA, maka cetak tulisan "Selamat berkendara"
+///   - jika Tidak, maka cetak tulisan "Diharapkan untuk membuat SIM terlebih dahulu"
+
+const userAge = 18;
+const drivingLicense = false;
+/// EDIT HERE
+if (userAge < 18){
+  console.log("Anda Belum Cukup Umur")
+}
+else {
+  if( drivingLicense == true ){
+    console.log("Diharapkan untuk membuat SIM terlebih dahulu")
+  }
+  else {
+    console.log("Selamat Berkendara")
+  }
+}
+
+/// Soal - 02
+/// Buatlah sebuah kondisi yang akan melakukan konversi suhu dari celcius ke variable yang dituju (kelvin, fahrenheit, dan celsius)
+/// - kondisi dibuat menggunakan switch case
+/// - konversi celcius menjadi kelvin apabila user memasukan unit berupa "K"
+/// - konversi celcius menjadi fahrenheit apabila user memasukan unit berupa "F"
+/// - konversi celcius menjadi celcius apabila user memasukan unit berupa "C"
+/// - menampilkan pesan "Maaf anda salah input", apabila variable tidak memenuhi semua kondisi yang ada
+const temperature = 100; /// suhu
+const unit = "K"; /// inputan
+
+switch (unit){
+    case "F":
+        console.log(((temperature*9/5)+32)+" F ");
+        break;
+    case "C":
+        console.log(temperature + " C ");
+        break;
+    case "K":
+        console.log(temperature + 273.15 + "K" );
+        break;
+    default:
+        console.log("Maaf anda salah input");
+  /// EDIT HERE
+}
+
+///tugas 04-loop
+
+/// Soal - 01
+/// Kamu diminta untuk membuat sebuah perulangan menggunakan for loop, untuk mencetak angka prima dari 1 ~ 100
+/// EDIT HERE
+let prima = (angka) => {
+  let pembagi = 0;
+  for(let i=1; i <= angka; i++){
+    if(angka%i == 0){
+      pembagi++
+    }
+  }
+  if(pembagi == 2){
+    y="bilangan prima";
+  }
+  else{
+    y="bukan bilangan prima";
+  }
+}
+for(let j=1;j<=100;j++){
+    prima(j);
+    console.log(j+" "+y)
+}
+
+/// Soal - 02
+/// Kamu diminta untuk menemukan bilangan prima ke-50, temukan bilangan tersebut menggunakan while loop 
+let primeCounter = 0;
+let fiftiethPrime = 0;
+
+/// EDIT HERE
+while(fiftiethPrime<50 ){
+  prima(primeCounter);
+  if(y==="bilangan prima"){
+    fiftiethPrime++;
+    console.log("prima ke "+fiftiethPrime+" bilangannya adalah "+primeCounter)
+    primeCounter++;
+  }
+  else {
+    primeCounter++;
+  }
+}
+///}
+
+/// Soal - 03
+/// Kamu diminta untuk menemukan bilangan ganjil ke-50, temukan bilangan tersebut menggunakan do while loop
+let oddCounter = 0;
+let fiftiethOdd = 0;
+
+/// EDIT HERE
+do {
+
+if (oddCounter%2==1) {
+    fiftiethOdd++;
+    console.log(oddCounter+" merupakan bilangan ganjil ke "+fiftiethOdd)
+    oddCounter++;
+    
+}
+else {
+oddCounter++;
+}
+} 
+while (fiftiethOdd<50)
+
+///Tugas 05-Function
+
+/// Soal - 01
+/// Kamu diminta untuk membuat sebuah fungsi yang akan me-return berapa banyak pajak yang harus kamu bayarkan, fungsi tersebut memiliki spesifikasi sebagai berikut
+
+/// Spesifikasi
+/// - 0% pajak apabila $SALARY < Rp 5.000.000
+/// - 5% pajak apabila Rp 5.000.000 <= $SALARY < Rp 10.000.000
+/// - 10% pajak apabila Rp 10.000.000 <= $SALARY < Rp 20.000.000
+/// - 20% pajak apabila Rp 20.000.000 <= $SALARY 
+
+/// Parameter
+/// - (Number) `salary` => gaji yang kamu hasilkan
+
+/// Returnn Value
+/// - (Number) total pajak yang harus kamu bayarkan
+
+/// EDIT HERE
+function taxCalc(salary) { 
+  if (salary<5000000) {
+    Number = salary*0 ;
+  } 
+  else  if (salary<10000000) {
+    Number = salary*0.05 ;
+  } 
+  else  if (salary<20000000) {
+    Number = salary*0.1 ;
+  }
+  else  if (salary>20000000) {
+    Number = salary*0.2 ;
+  }
+  return Number ;
+} 
+
+taxCalc(15000000) ;
+console.log(Number)
+
+
+/// Soal - 02
+/// BMI merupakan sebuah perhitungan yang mana dapat menunjukan apakah seseorang itu masuk dalam kategori obesitas atau tidak. Kamu diminta untuk membuat sebuah fungsi untuk menghitung BMI seseorang serta dapat menentukan apakah orang tersebut obesitas atau tidak.
+
+/// Spesifikasi BMI
+/// - "under weight" apabila $BMI < 18.5
+/// - "normal" apabila 18.5 < $BMI < 24.9
+/// - "over weight" apabila 25 < $BMI < 29.9
+/// - "obese" apabila 30 < $BMI < 34.9
+/// - "extremely obese" apabila 35 < BMI
+
+/// Parameter
+/// - (Number) `height` ⇒ tinggi seseorang (cm)
+/// - (Number) `weight` ⇒ berat badan seseorang (kg) 
+
+/// Return Value
+/// - (String) Indikasi BMI yang didapatkan melalui formula dibawah
+///   (weight/(height^2)) * 10000
+
+/// EDIT HERE
+function checkBMI(height,weight) {
+  BMI = (weight/(height*height))*10000 ;
+  if (BMI < 18.5){
+    output = "under weight"
+  }
+  else if (BMI < 24.9){
+    output = "normal"
+  }
+  else if (BMI < 29.9){
+    output = "over weight"
+  }
+  else if (BMI < 35){
+    output = "obese"
+  }
+  else if (BMI > 35){
+    output = "extremely obese"
+  }
+  return output ;
+ } 
+
+checkBMI(200,90);
+console.log(output)
+
+/// Soal - 03
+/// Buatlah sebuah fungsi yang akan merubah huruf pertama disetiap kata menjadi huruf besar
+
+/// Parameter
+/// - (String) sentence => kalimat yang nanti akan diubah
+
+/// Return Value
+/// - (String) kalimat yang sudah kita ubah huruf pertamanya menjadi huruf besar
+
+/// EDIT HERE
+
+function convToUpperCase(sentence){  
+  output = sentence.replace (/\w\S*/g, function(txt)
+      {  return txt.charAt(0) + txt.substr(1).toLowerCase(); } );
+  return output;
+}
+
+convToUpperCase("sentence ini besar") ;
+console.log(output)
+
+
+/// Soal - 04
+/// Buatlah sebuah fungsi yang mana nanti akan mengembalikan HURUF PERTAMA YANG TIDAK KEMBAR
+
+/// Spesifikasi
+/// - apabila inputan berupa kata yang dipisah, maka kembalikan "kata tidak boleh dipisah"
+/// - apabila inputan tidak memiliki karakter yang tidak kembar, maka kembalikan string kosong ""
+/// - apabila ditemukan lebih dari 0 karakter yang tidak sama, maka kembalikan karakter pertama yang tidak sama
+
+/// Parameter
+/// - (String) word => kata yang nanti akan kita gunakan untuk mencari huruf yang tidak kembar (KATA TIDAK BOLEH DIPISAH)
+
+/// Result Value
+/// (String) huruf yang pertama kali tidak ada kembarannya
+
+/// EDIT HERE
+function firstNonRepeatedChar(word) {  
+    let huruf;
+
+    for (let index = 0; index < word.length; index++) {
+        huruf = word[index];
+        if(huruf == " "){
+            return "kata tidak boleh dipisah";
+        }
+        
+    }
+
+    for (let index = 0; index < word.length; index++) {
+        huruf = word[index];
+        let cek = false;
+        for (let j = 0; j < word.length; j++) {
+            if(huruf == word[j] && j != index){
+                cek = true;
+                break;
+            }
+        }
+        if(cek == false){
+            return huruf;
+            break;
+        }
+    }
+    return "";
+}
+console.log(firstNonRepeatedChar("Nama Saya"));
+console.log(firstNonRepeatedChar("fajaf"));
+console.log(firstNonRepeatedChar("uhuy"));
+
+///tugas 06
+
+/// Soal - 01
+/// Kita sudah belajar mengenai variable scope yang dimiliki oleh Javascript
+/// dan kamu diminta untuk merangkum tentang:
+/// - ada berapa banyak jumlah variable scope pada Javascript?
+console.log("Ada 2 scope: Global dan Local ");
+/// - jelaskan secara singkat setiap variable scope yang dimiliki oleh Javascript
+console.log("Global Scope  biasanya dideklarasikan di awal program file dan dapat digunakan dimanapun pada program tersebut.");
+
+console.log("Local Scope merupakan variabel yang hanya dapat digunakan/diakses pada fungsi tempatnya dideklarasaikan");
+/// - buatlah implementasi sederhana dari tiap-tiap variable scope yang dimiliki oleh Javascript
+let a = "My";
+function greet() {
+    let b = "Name"
+    console.log(a + b);
+}
+
+console.log("a (variabel global) dan b (variabel lokal)");
+
+/// WRITE YOUR ANALYSIS HERE
+
+/// Soal - 02
+/// Kamu diminta untuk melakukan analisa terhadap baris kode dibawah ini
+/// - apa yang akan tampil didalam comsole.log ?
+/// - apa alasan yang menyebabkan hasil dari console itu bukan nilai dari variable name?
+
+/// WRITE YOUR ANALYSIS HERE
+/////Hasil yang dikeluarkan adalah mariah dikarenakan variabel name sudah diassign dengan nilai vaiabel lokal yang diberikan saat pemanggilan fungsinya.
+const name = "John Watson";
+
+function printFirstName(name) {
+  return name.split(" ")[0];
+}
+
+console.log(printFirstName("Mariah Carey"));
+
+//Hasil yang dikeluarkan adalah mariah
+
+//Tugas 07
+
+/// Soal - 01
+/// Kamu diminta untuk menjelaskan apa perbedaan antara
+/// /// Soal - 01
+/// Kamu diminta untuk menjelaskan apa perbedaan antara
+/// - Type Error
+/// - Reference Error
+/// - Range Error
+/// - Syntax Error
+
+/// WRITE YOUR ANALYSIS HERE
+// - Type Error :  error saat operasi tidak dapat dilakukan karena kesalahan type data .
+// - Reference Error :  error saat tidak adanya variabel yang tersedia untuk dipanggil.
+// - RangeError : error saat value tidak diset atau range valuenya tidak diperbolehkan.
+//Syntax Error :  error saat mencoba untuk memanggil fungsi/method yang tidak tersedia oleh sebuah bahasa.
+
+/// Soal - 02
+/// Kamu diminta untuk melakukan analisa terhadap baris kode dibawah dengan instruksi detail sebagai berikut:
+/// - apabila kita menjalankan baris kode dibawah apa yang akan terjadi?
+/// - apabila terjadi error, termasuk dalam kategori manakah error tersebut?
+/// - apabila terjadi error, jelaskan mengapa hal tersebut bisa terjadi
+
+/// WRITE YOUR ANALYSIS HERE
+console.log(salaryWithVar)
+console.log(salaryWithConst)
+
+var salaryWithVar = 15000000;
+const salaryWithConst = 15000000;
+
+// Terjadi error
+// Reference Error
+// Karna tidak adanya inisialisasi variabel salaryWithConst sebelum variabel tersebut dipanggil dengan console.log.
+
+
+</script>
+</html>
